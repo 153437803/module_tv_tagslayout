@@ -5,6 +5,8 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.RectF;
 import android.os.Build;
 import android.support.annotation.ColorInt;
 import android.support.annotation.Keep;
@@ -57,27 +59,36 @@ public class TagsLayout extends LinearLayout {
         init(attrs);
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-    public TagsLayout(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
-        init(attrs);
-    }
-
     @Override
     protected void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
+        TagsUtil.logE("dispatchDraw =>");
         if (mUnderlineColor != Color.TRANSPARENT && mUnderlineHeight > 0) {
             Paint paint = new Paint();
-            paint.setColor(Color.parseColor("#1C1C40"));
-            float bottom = getBottom();
+            paint.setAntiAlias(true);
+            paint.setFilterBitmap(true);
+            paint.setDither(true);
+            paint.setStrokeCap(Paint.Cap.ROUND);
+            paint.setStrokeJoin(Paint.Join.ROUND);
+            paint.setStyle(Paint.Style.FILL);
+            paint.setColor(mUnderlineColor);
             paint.setStrokeWidth(mUnderlineHeight);
-            float startX = mUnderlinePaddingLeft;
-            float stopX = getWidth() - mUnderlinePaddingRight;
-            float startY = bottom - mUnderlineHeight * 2;
-            float stopY = startY;
-            TagsUtil.logE("dispatchDraw => startX = " + startX + ", stopX = " + stopX + ", startY = " + startY + ", height = " + bottom + ", offset = " + mUnderlineHeight);
-            canvas.drawLine(startX, startY, stopX, stopY, paint);
+            Rect rectF = new Rect();
+            int width = getWidth();
+            int height = getHeight();
+            rectF.left = mUnderlinePaddingLeft;
+            rectF.right = width - mUnderlinePaddingRight;
+            rectF.top = height - mUnderlineHeight / 2;
+            rectF.bottom = height;
+            canvas.drawRect(rectF, paint);
+            TagsUtil.logE("dispatchDraw[drawRect] => left = " + rectF.left + ", top = " + rectF.top + ", right = " + rectF.right + ", bottom = " + rectF.bottom + ", height = " + height + ", width = " + width + ", lineHeight = " + mUnderlineHeight + ", lineColor = " + mUnderlineColor);
         }
+    }
+
+    @Override
+    protected boolean drawChild(Canvas canvas, View child, long drawingTime) {
+        TagsUtil.logE("drawChild => child = " + child);
+        return super.drawChild(canvas, child, drawingTime);
     }
 
     private final void init(@Nullable AttributeSet attrs) {
