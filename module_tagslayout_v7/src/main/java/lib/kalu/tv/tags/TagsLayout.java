@@ -6,8 +6,6 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
-import android.graphics.RectF;
-import android.os.Build;
 import android.support.annotation.ColorInt;
 import android.support.annotation.Keep;
 import android.support.annotation.NonNull;
@@ -23,7 +21,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import lib.kalu.tv.R;
 import lib.kalu.tv.tags.listener.OnTagsChangeListener;
 import lib.kalu.tv.tags.model.TagsModel;
 

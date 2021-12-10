@@ -15,8 +15,6 @@ import android.view.Gravity;
 import android.view.KeyEvent;
 import android.widget.TextView;
 
-import lib.kalu.tv.R;
-
 @SuppressLint("AppCompatCustomView")
 class TagsTextView extends TextView {
 
