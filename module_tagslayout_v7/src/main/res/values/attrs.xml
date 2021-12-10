@@ -1,0 +1,14 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <declare-styleable name="TagsLayout">
+        <attr name="tl_item_height" format="reference|dimension" />
+        <attr name="tl_item_padding_top" format="reference|dimension" />
+        <attr name="tl_item_padding_bottom" format="reference|dimension" />
+        <attr name="tl_text_size" format="reference|dimension" />
+        <attr name="tl_text_padding_left" format="reference|dimension" />
+        <attr name="tl_text_padding_right" format="reference|dimension" />
+        <attr name="tl_underline_height" format="reference|dimension" />
+        <attr name="tl_underline_color" format="reference|color" />
+        <attr name="tl_underline_padding_left" format="reference|dimension" />
+        <attr name="tl_underline_padding_right" format="reference|dimension" />
+    </declare-styleable>
+</resources>
