@@ -41,6 +41,7 @@ class TagsHorizontalScrollView extends HorizontalScrollView {
         setFillViewport(true);
         setFocusable(false);
         setFocusableInTouchMode(false);
+        setHorizontalScrollBarEnabled(false);
     }
 
     /********************/
