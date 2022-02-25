@@ -6,4 +6,5 @@ dependencyResolutionManagement {
     }
 }
 include ':app'
-include ':module_tagslayout_v7'
+//include ':module_tagslayout_v7'
+include ':module_tagslayout_androidx'

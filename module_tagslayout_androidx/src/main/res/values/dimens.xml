@@ -1,0 +1,8 @@
+<resources>
+    <dimen name="module_tagslayout_text_padding_left_default">8dp</dimen>
+    <dimen name="module_tagslayout_text_padding_right_default">8dp</dimen>
+    <dimen name="module_tagslayout_text_size_default">14sp</dimen>
+    <dimen name="module_tagslayout_item_height_default">24sp</dimen>
+    <dimen name="module_tagslayout_item_padding_top_default">2dp</dimen>
+    <dimen name="module_tagslayout_item_padding_bottom_default">2dp</dimen>
+</resources>
