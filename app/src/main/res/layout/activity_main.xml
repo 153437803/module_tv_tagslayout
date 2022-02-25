@@ -3,4 +3,46 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <Button
+        android:id="@+id/text_button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="button1" />
+
+    <Button
+        android:id="@+id/text_button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="button2" />
+
+    <Button
+        android:id="@+id/text_button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:text="button3" />
+
+    <Button
+        android:id="@+id/text_button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:text="text_button4" />
+
+    <lib.kalu.tv.tags.TagsLayout
+        android:id="@+id/test_tags"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/text_button2"
+        android:layout_below="@id/text_button1"
+        android:layout_margin="10dp"
+        android:layout_toLeftOf="@id/text_button4"
+        android:layout_toRightOf="@id/text_button3" />
+
 </RelativeLayout>
